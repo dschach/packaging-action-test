@@ -30,7 +30,7 @@
 		"x2oddevhub": "sf config set target-dev-hub=x2od"
 	},
 	"devDependencies": {
-		"@lwc/eslint-plugin-lwc": "^1.6.2",
+		"@lwc/eslint-plugin-lwc": "^1.6.3",
 		"@prettier/plugin-xml": "^2.2.0",
 		"@salesforce/eslint-config-lwc": "^3.4.0",
 		"@salesforce/eslint-plugin-aura": "^2.1.0",
