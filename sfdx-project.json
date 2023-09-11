@@ -2,12 +2,11 @@
   "packageDirectories": [
     {
       "path": "force-app",
-      "default": true,
-      "versionNumber": "0.3.2.NEXT"
+      "default": true
     }
   ],
-  "name": "SFDX-Base",
+  "name": "dschach-package-test",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "56.0"
+  "sourceApiVersion": "59.0"
 }
