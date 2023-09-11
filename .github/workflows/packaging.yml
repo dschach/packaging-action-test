@@ -5,8 +5,8 @@ name: Packaging
 on:
   workflow_dispatch:
 
-  #release:
-  #  types: [released]
+  release:
+    types: [released]
 
 # Jobs to be executed
 jobs:
@@ -25,7 +25,6 @@ jobs:
         run: |
           npm install @salesforce/cli --global
           sf --version
-
       # Checkout the code in the pull request
       - name: 'Checkout source code'
         uses: actions/checkout@v4
@@ -67,21 +66,21 @@ jobs:
         id: create-package-version
         run: |
           set +e
-          json=$(sfdx force:package:version:create -c -p ChangeMe --path force-app --installationkeybypass -w 20 --json)
+          json=$(sf package version create --code-coverage --package QuoteCustomSync --path force-app --installationkeybypass --wait 20 --json)
           echo $json
           status=$(echo $json | jq '.status')
           if [ $status == "0" ]; then
               packageVersionId=$(echo $json | jq '.result.SubscriberPackageVersionId')
               echo "::set-output name=packageVersionId::$packageVersionId"
           else
-              echo "sfdx force:package:version:create failed"
+              echo "sf package version create failed"
           fi
           exit $status
 
       # Update sfdx-project.json and README to use only latest package version
-      #- name: 'Update sfdx-project.json and README'
-      #  id: packaging-updater
-      #  uses: trailheadapps/github-action-sfdx-packaging-updater@main
+      - name: 'Update sfdx-project.json and README'
+        id: packaging-updater
+        uses: trailheadapps/github-action-sfdx-packaging-updater@main
 
       # Remove namespace from project config
       - name: Remove namespace from project config
@@ -92,5 +91,6 @@ jobs:
       - name: 'Commit changes'
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: 'Created new package version'
+          commit_message: 'chore(packaging): created new package version'
           file_pattern: sfdx-project.json README.md
+          push_options: --force
