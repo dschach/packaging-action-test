@@ -35,18 +35,18 @@
 		"@salesforce/eslint-config-lwc": "^3.5.2",
 		"@salesforce/eslint-plugin-aura": "^2.1.0",
 		"@salesforce/eslint-plugin-lightning": "^1.0.0",
-		"@salesforce/sfdx-lwc-jest": "^3.0.0",
-		"eslint": "^8.49.0",
+		"@salesforce/sfdx-lwc-jest": "^3.0.1",
+		"eslint": "^8.51.0",
 		"eslint-config-prettier": "^9.0.0",
 		"eslint-plugin-import": "^2.28.1",
-		"eslint-plugin-jest": "^27.4.0",
+		"eslint-plugin-jest": "^27.4.2",
 		"eslint-plugin-prettier": "^5.0.0",
 		"husky": "^8.0.3",
 		"lint-staged": "^14.0.1",
-		"marked": "^9.0.2",
+		"marked": "^9.1.0",
 		"prettier": "^3.0.3",
 		"prettier-plugin-apex": "^2.0.1",
-		"release-please": "^15.13.0"
+		"release-please": "^16.0.0"
 	},
 	"lint-staged": {
 		"force-app/**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,yaml,yml}": [
