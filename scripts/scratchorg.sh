@@ -7,10 +7,10 @@ echo "Clearing namespace"
 sed -i "" "s|\"namespace\": \"\"|\"namespace\": \"\"|" sfdx-project.json
 
 echo "Cleaning previous scratch org..."
-sf org delete scratch --no-prompt --target-org=ChangeMe
+sf org delete scratch --no-prompt --target-org=PackagingScratch
 
 echo "Creating new scratch org"
-sf org create scratch --definition-file config/project-scratch-def.json --duration-days 10 --alias ChangeMe --set-default
+sf org create scratch --definition-file config/project-scratch-def.json --duration-days 10 --alias PackagingScratch --set-default
 
 echo "Pushing metadata"
 sf deploy metadata
