@@ -1,4 +1,4 @@
-npm run x2oddevhub
+npm run devhub-x2od
 
 echo "set managed package"
 sed -i "" "s|\"namespace\": \"\"|\"namespace\": \"TestNamespace\"|" sfdx-project.json

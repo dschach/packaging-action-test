@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Set x2od org as dev hub"
-npm run x2oddevhub
+npm run devhub-x2od
 
 echo "Clearing namespace"
 sed -i "" "s|\"namespace\": \"\"|\"namespace\": \"\"|" sfdx-project.json

@@ -8,7 +8,7 @@ echo "Installing scratch org ($ORG_ALIAS)"
 echo ""
 
 echo "Setting x2od org as dev hub"
-npm run x2oddevhub
+npm run devhub-x2od
 echo ""
 
 # Install script
