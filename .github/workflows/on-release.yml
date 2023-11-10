@@ -25,16 +25,12 @@ jobs:
           content="${content//$'\r'/'%0D'}"
           # end of optional handling for multi line json
           #echo "::set-output name=packageJson::$content"
-          echo "packageJson=$content" >> $GITHUB_OUTPUT
+          #echo "packageJson=$content" >> $GITHUB_OUTPUT
           namespace=$($content | jq '.namespace')
           echo "namespace=$namespace" >> $GITHUB_OUTPUT
           echo "$namespace"
       - name: 'Verify output'
         id: verify-output
         run: |
-          echo ${{steps.parse-package.outputs.packageJson}}
-          echo "${{ steps.parse-package.outputs.packageJson}}"
-          env_data=${{ fromJson(steps.parse-package.outputs.packageJson) }}
-          echo "env_data=$env_data"
-          echo $env_data.namespace
-          echo ${{ steps.parse-package.outputs.namespace }}
+          echo ${{steps.parse-package.outputs.namespace}}
+          echo "${{ steps.parse-package.outputs.namespace}}"
