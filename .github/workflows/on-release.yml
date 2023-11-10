@@ -32,9 +32,9 @@ jobs:
       - name: 'Verify output'
         id: verify-output
         run: |
-          echo ${{steps.parse-package.outputs.content}}
-          echo "${{ steps.parse-package.outputs.content}}"
-          env_data=${{ fromJson(steps.parse-package.outputs.content) }}
+          echo ${{steps.parse-package.outputs.packageJson}}
+          echo "${{ steps.parse-package.outputs.packageJson}}"
+          env_data=${{ fromJson(steps.parse-package.outputs.packageJson) }}
           echo "env_data=$env_data"
           echo $env_data.namespace
           echo ${{ steps.parse-package.outputs.namespace }}
