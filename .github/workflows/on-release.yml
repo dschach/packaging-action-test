@@ -24,24 +24,17 @@ jobs:
           content="${content//$'\n'/'%0A'}"
           content="${content//$'\r'/'%0D'}"
           # end of optional handling for multi line json
-          echo "::set-output name=packageJson::$content"
+          #echo "::set-output name=packageJson::$content"
           echo "packageJson=$content" >> $GITHUB_OUTPUT
           namespace=$($content | jq '.namespace')
           echo "namespace=$namespace" >> $GITHUB_OUTPUT
-
-  salesforce-authentication:
-    runs-on: ubuntu-latest
-    needs: parse-config
-    steps:
-      # Checkout the code in the pull request
-      - name: 'Checkout source code'
-        #uses: actions/checkout@v4
-        #with:
-        #  ref: 'main'
+          echo "$namespace"
+      - name: 'Verify output'
+        id: verify-output
         run: |
-          echo ${{needs.parse-package.outputs.content}}
-          echo "${{ needs.parse-package.outputs.content}}"
-          env_data=${{ fromJson(needs.parse-package.outputs.content) }}
+          echo ${{steps.parse-package.outputs.content}}
+          echo "${{ steps.parse-package.outputs.content}}"
+          env_data=${{ fromJson(steps.parse-package.outputs.content) }}
           echo "env_data=$env_data"
           echo $env_data.namespace
-          echo ${{ needs.parse-package.outputs.namespace }}
+          echo ${{ steps.parse-package.outputs.namespace }}
