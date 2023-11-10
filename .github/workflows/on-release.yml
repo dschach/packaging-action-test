@@ -1,5 +1,5 @@
 # Unique name for this workflow
-name: Gen2 Package on Release
+name: Gen2 Packaging
 on:
   release:
     types: [published, created, edited]
@@ -29,11 +29,12 @@ jobs:
     steps:
       # Checkout the code in the pull request
       - name: 'Checkout source code'
-        uses: actions/checkout@v4
-        with:
-          ref: 'main'
+        #uses: actions/checkout@v4
+        #with:
+        #  ref: 'main'
         run: |
-          echo "${{ steps.parse-package.outputs.content}}"
-          env_data=${{ fromJson(steps.package.outputs.content) }}
+          echo ${{needs.parse-config.outputs.content}}
+          echo "${{ needs.parse-config.outputs.content}}"
+          env_data=${{ fromJson(needs.parse-config.outputs.content) }}
           echo "env_data=$env_data"
           echo $env_data.namespace
