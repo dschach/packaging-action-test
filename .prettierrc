@@ -17,6 +17,10 @@
 			"options": { "parser": "html" }
 		},
 		{
+			"files": ".prettierrc",
+			"options": { "parser": "json", "printWidth": 80 }
+		},
+		{
 			"files": "*.{yml,yaml}",
 			"options": { "tabWidth": 2, "useTabs": false }
 		},
@@ -30,5 +34,7 @@
 				"singleQuote": false
 			}
 		}
-	]
+	],
+	"plugins": ["prettier-plugin-apex", "@prettier/plugin-xml"],
+	"$schema": "https://json.schemastore.org/prettierrc"
 }
