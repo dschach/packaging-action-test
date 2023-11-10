@@ -11,6 +11,10 @@ jobs:
     outputs:
       sfdxpackage: ${{ steps.parse-package.outputs.packageJson }}
     steps:
+      - name: 'Checkout source code'
+        uses: actions/checkout@v4
+        with:
+          ref: 'main'
       - name: 'Parse sfdx-package.json'
         id: parse-package
         run: |
