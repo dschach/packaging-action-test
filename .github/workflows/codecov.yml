@@ -1,0 +1,21 @@
+name: code-coverage
+on:
+  workflow_dispatch:
+  #push:
+  #  paths:
+  #    - "force-app/**"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout source code'
+        uses: actions/checkout@v4
+      - name: Install Dependencies
+        run: |
+          npm install @salesforce/cli --global
+          sf --version
+      - name: Populate auth file
+        run: 'echo "${{ secrets.SALESFORCE_AUTH_URL }}" > ./SALESFORCE_AUTH_URL.txt'
+      - name: Authenticate Dev Hub
+        #run: 'sf org login sfdx-url --sfdx-url-file ./SALESFORCE_AUTH_URL.txt --alias DevHub --set-default-dev-hub'
+        run: 'sf org login sfdx-url --sfdx-url-file ${{ secrets.SALESFORCE_AUTH_URL }} --alias DevHub --set-default-dev-hub'
