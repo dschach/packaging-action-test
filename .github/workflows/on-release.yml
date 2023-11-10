@@ -4,6 +4,7 @@ on:
   release:
     types: [published, created, edited]
   workflow_dispatch:
+  push:
 # Jobs to be executed
 jobs:
   parse-config:
@@ -33,4 +34,4 @@ jobs:
         id: verify-output
         run: |
           echo ${{steps.parse-package.outputs.namespace}}
-          echo "${{ steps.parse-package.outputs.namespace}}"
+          #echo "${{ steps.parse-package.outputs.namespace}}"
