@@ -2,9 +2,11 @@
 name: Gen2 Packaging
 on:
   release:
-    types: [published, created, edited]
+    types: [released]
   workflow_dispatch:
   push:
+    branches:
+      - main
 
 # Jobs to be executed
 jobs:
@@ -74,9 +76,20 @@ jobs:
         run: |
           git config user.email "${{ github.repository_owner }}@users.noreply.github.com"
           git config user.name "${{ github.repository_owner }}"
-          . doc-assets/updateChangelog.sh
+          git add README.md
+          git add sfdx-project.json
+      - name: 'Check changed files'
+        id: count-changes
+        run: |
+          git diff --name-only > changed.txt
+          changes=$(wc -l "./changed.txt" | awk '{print $1}')
+          echo "changes=$changes" >> $GITHUB_OUTPUT
+          if [ $changes == 1 ]; then
+              echo "No files changed";
+          fi
       - name: 'Commit changes'
         id: auto-commit-action
+        if: steps.count-changes.outputs.changes > 1
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: 'Created new package version'
