@@ -6,7 +6,7 @@
     }
   ],
   "name": "dschach-package-test",
-  "namespace": "testspace22",
+  "namespace": "testspace",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "59.0"
 }
