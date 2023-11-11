@@ -35,3 +35,11 @@ jobs:
         run: |
           echo ${{steps.parse-package.outputs.namespace}}
           #echo "${{ steps.parse-package.outputs.namespace}}"
+          sed -i -E "s,${{ steps.parse-package.outputs.namespace}},${{ steps.parse-package.outputs.namespace}}2," sfdx-project.json
+          #Update sfdx-project.json
+
+      - name: 'Commit changes'
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'Created new package version'
+          file_pattern: sfdx-project.json
