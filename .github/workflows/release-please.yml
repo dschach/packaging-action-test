@@ -11,7 +11,20 @@ jobs:
   release-please:
     runs-on: ubuntu-latest
     steps:
-      - uses: google-github-actions/release-please-action@v3
+      - name: 'Release Please Action'
+        id: release-please
+        uses: google-github-actions/release-please-action@v3
         with:
           command: manifest
           release-type: sfdx
+      - run: echo ${{join(steps.release-please.outputs.*, '\n')}}
+      - name: 'Check if package created'
+        id: package-check
+        if: steps.release-please.outputs.releases_created != true
+        run: |
+          echo "No package created. Exiting."
+          exit 0
+      - name: 'Run on package creation'
+        if: steps.release-please.outputs.releases_created == true
+        run: |
+          . doc-assets/updateChangelog.sh

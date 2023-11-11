@@ -5,17 +5,34 @@ on:
     types: [published, created, edited]
   workflow_dispatch:
   push:
+
 # Jobs to be executed
 jobs:
   parse-config:
     runs-on: ubuntu-latest
     outputs:
       sfdxpackage: ${{ steps.parse-package.outputs.packageJson }}
+    permissions:
+      contents: write
     steps:
       - name: 'Checkout source code'
         uses: actions/checkout@v4
         with:
           ref: 'main'
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+      - name: 'Install npm dependencies'
+        #if: steps.cache-npm.outputs.cache-hit != 'true'
+        run: npm ci
+      - name: 'Release Please Action Placeholder'
+        id: release-please
+        run: |
+          echo "major=1" >> $GITHUB_OUTPUT
+          echo "minor=1" >> $GITHUB_OUTPUT
+          echo "patch=1" >> $GITHUB_OUTPUT
       - name: 'Parse sfdx-package.json'
         id: parse-package
         run: |
@@ -25,21 +42,47 @@ jobs:
           content="${content//$'\n'/'%0A'}"
           content="${content//$'\r'/'%0D'}"
           # end of optional handling for multi line json
-          #echo "::set-output name=packageJson::$content"
-          #echo "packageJson=$content" >> $GITHUB_OUTPUT
+          echo "packageJson=$content" >> $GITHUB_OUTPUT
           namespace=$($content | jq '.namespace')
           echo "namespace=$namespace" >> $GITHUB_OUTPUT
           echo "$namespace"
+
       - name: 'Verify output'
         id: verify-output
         run: |
           echo ${{steps.parse-package.outputs.namespace}}
-          #echo "${{ steps.parse-package.outputs.namespace}}"
+          echo "${{ steps.parse-package.outputs.packageJson}}"
           sed -i -E "s,${{ steps.parse-package.outputs.namespace}},${{ steps.parse-package.outputs.namespace}}2," sfdx-project.json
           #Update sfdx-project.json
+      - name: 'Upload Package Version'
+        id: package-version
+        run: |
+          echo "new version created"
+          echo "packageVersionId=04t3a0000001234AAC" >> $GITHUB_OUTPUT
+
+      - name: 'Update README URLs'
+        id: update-readme
+        run: |
+          prodInstallLink="https://login.salesforce.com/packaging/installPackage.apexp?p0=${{steps.package-version.outputs.packageVersionId}}
+          testInstallLink="https://test.salesforce.com/packaging/installPackage.apexp?p0=${{steps.package-version.outputs.packageVersionId}}
+          prodInstallRegex="https:\/\/login\.salesforce\.com\/packaging\/installPackage\.apexp\?p0=[a-zA-Z0-9]{18}"
+          testInstallRegex="https:\/\/test\.salesforce\.com\/packaging\/installPackage\.apexp\?p0=[a-zA-Z0-9]{18}"
+          sed -E -i "s,${prodInstallRegex},${prodInstallLink}," README.md
+          sed -E -i "s,${testInstallRegex},${testInstallLink}," README.md
+      - name: 'Update ApexDox'
+        id: update-apex-dox
+        run: |
 
       - name: 'Commit changes'
+        id: auto-commit-action
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: 'Created new package version'
-          file_pattern: sfdx-project.json
+          #file_pattern: sfdx-project.json
+      - name: 'Run if changes have been detected'
+        if: steps.auto-commit-action.outputs.changes_detected == 'true'
+        run: echo "Changes!"
+
+      - name: 'Run if no changes have been detected'
+        if: steps.auto-commit-action.outputs.changes_detected == 'false'
+        run: echo "No Changes!"
