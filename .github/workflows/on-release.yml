@@ -85,7 +85,7 @@ jobs:
           changes=$(wc -l "./changed.txt" | awk '{print $1}')
           echo "changes=$changes" >> $GITHUB_OUTPUT
           if [ $changes == 0 ]; then
-              echo "No files changed";
+              echo "No files changed.";
           fi
           rm changed.txt
       - name: 'Commit changes'
