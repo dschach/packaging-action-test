@@ -84,12 +84,13 @@ jobs:
           git diff --name-only > changed.txt
           changes=$(wc -l "./changed.txt" | awk '{print $1}')
           echo "changes=$changes" >> $GITHUB_OUTPUT
-          if [ $changes == 1 ]; then
+          if [ $changes == 0 ]; then
               echo "No files changed";
           fi
+          rm changed.txt
       - name: 'Commit changes'
         id: auto-commit-action
-        if: steps.count-changes.outputs.changes > 1
+        if: steps.count-changes.outputs.changes > 0
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: 'Created new package version'

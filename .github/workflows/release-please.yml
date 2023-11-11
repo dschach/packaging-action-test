@@ -21,11 +21,12 @@ jobs:
         run: echo "${{join(steps.release-please.outputs.*, '\n')}}"
       - name: 'Check if package created'
         id: package-check
-        if: steps.release-please.outputs.releases_created != true
+        if: steps.release-please.outputs.releases_created == false
         run: |
           echo "No package created. Exiting."
           exit 0
       - name: 'Run on package creation'
+        if: steps.release-please.outputs.releases_created == true
         run: echo "package created"
       - name: 'Update ApexDox'
         id: update-apex-dox
