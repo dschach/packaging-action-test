@@ -63,8 +63,8 @@ jobs:
       - name: 'Update README URLs'
         id: update-readme
         run: |
-          prodInstallLink="https://login.salesforce.com/packaging/installPackage.apexp?p0=${{steps.package-version.outputs.packageVersionId}}
-          testInstallLink="https://test.salesforce.com/packaging/installPackage.apexp?p0=${{steps.package-version.outputs.packageVersionId}}
+          prodInstallLink="https://login.salesforce.com/packaging/installPackage.apexp?p0=${{steps.package-version.outputs.packageVersionId}}"
+          testInstallLink="https://test.salesforce.com/packaging/installPackage.apexp?p0=${{steps.package-version.outputs.packageVersionId}}"
           prodInstallRegex="https:\/\/login\.salesforce\.com\/packaging\/installPackage\.apexp\?p0=[a-zA-Z0-9]{18}"
           testInstallRegex="https:\/\/test\.salesforce\.com\/packaging\/installPackage\.apexp\?p0=[a-zA-Z0-9]{18}"
           sed -E -i "s,${prodInstallRegex},${prodInstallLink}," README.md
