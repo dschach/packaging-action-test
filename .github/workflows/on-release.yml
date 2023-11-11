@@ -38,7 +38,7 @@ jobs:
       - name: 'Parse sfdx-package.json'
         id: parse-package
         run: |
-          content="cat sfdx-project.json"
+          content=$(<sfdx-project.json)
           # the following lines are only required for multi line json
           content="${content//'%'/'%25'}"
           content="${content//$'\n'/'%0A'}"
@@ -52,8 +52,8 @@ jobs:
       - name: 'Verify output'
         id: verify-output
         run: |
-          echo ${{steps.parse-package.outputs.namespace}}
-          echo "${{ steps.parse-package.outputs.packageJson}}"
+          echo "Namespace is ${{steps.parse-package.outputs.namespace}}""
+          echo "Project is ${{ steps.parse-package.outputs.packageJson}}""
           sed -i -E "s,${{ steps.parse-package.outputs.namespace}},${{ steps.parse-package.outputs.namespace}}2," sfdx-project.json
           #Update sfdx-project.json
       - name: 'Upload Package Version'
@@ -87,6 +87,8 @@ jobs:
           if [ $changes == 0 ]; then
               echo "No files changed.";
           fi
+          if [ $changes > 0 ]; then
+              git add .
           rm changed.txt
       - name: 'Commit changes'
         id: auto-commit-action
