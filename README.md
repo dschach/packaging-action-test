@@ -2,9 +2,9 @@
 
 ## [Changelog](./CHANGELOG.md)
 
-Production install: https://login.salesforce.com/packaging/installPackage.apexp?p0=04t3a0000001234AAC
+Production install: https://login.salesforce.com/packaging/installPackage.apexp?p0=04t3a0000004321AAC
 
-Sandbox install: https://test.salesforce.com/packaging/installPackage.apexp?p0=04t3a0000001234AAC
+Sandbox install: https://test.salesforce.com/packaging/installPackage.apexp?p0=04t3a0000004321AAC
 
 Things to do in the packaging workflow:
 
