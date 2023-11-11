@@ -39,7 +39,7 @@ jobs:
         id: parse-package
         shell: bash
         run: |
-          content="$(cat sfdx-project.json | tr '\n' ' ')
+          content="$(cat sfdx-project.json | tr '\n' ' ')"
           # the following lines are only required for multi line json
           content="${content//'%'/''}"
           content="${content//$'\n'/''}"
