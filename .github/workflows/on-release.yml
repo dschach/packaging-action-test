@@ -37,12 +37,13 @@ jobs:
           echo "patch=1" >> $GITHUB_OUTPUT
       - name: 'Parse sfdx-package.json'
         id: parse-package
+        shell: bash
         run: |
           content=`cat sfdx-project.json`
           # the following lines are only required for multi line json
-          #content="${content//'%'/''}"
-          #content="${content//$'\n'/''}"
-          #content="${content//$'\r'/''}"
+          content="${content//'%'/''}"
+          content="${content//$'\n'/''}"
+          content="${content//$'\r'/''}"
           # TODO: Check if namespace exists. If not, send empty string
           # end of optional handling for multi line json
           echo "packageJson=$content" >> $GITHUB_OUTPUT
