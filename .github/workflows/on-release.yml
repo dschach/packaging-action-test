@@ -38,7 +38,7 @@ jobs:
       - name: 'Parse sfdx-package.json'
         id: parse-package
         run: |
-          content=$(echo sfdx-project.json)
+          content=`cat sfdx-project.json`
           # the following lines are only required for multi line json
           #content="${content//'%'/''}"
           #content="${content//$'\n'/''}"
