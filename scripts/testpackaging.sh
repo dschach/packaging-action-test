@@ -2,10 +2,19 @@
 
 echo "start"
 
-content=`cat sfdx-project.json`
-          # the following lines are only required for multi line json
-          content="${content//'%'/'%25'}"
-          content="${content//$'\n'/'%0A'}"
-          content="${content//$'\r'/'%0D'}"
-          # end of optional handling for multi line json
-          echo "::set-output name=packageJson::$content"
+project=`cat sfdx-project2.json` | jq .
+echo "project: $project"
+echo "now show namespace"
+namespace=$(echo $project | jq -r ."namespace")
+#namespace=$($project | jq ".namespace")
+echo "$namespace"
+
+packagedirs=$(echo $project | jq ."packageDirectories")
+echo $packagedirs
+#echo $packagedirs | jq ".[0]"
+
+defaultPath=$(echo $project | jq $packagedirs select(.default == true) | jq ."path")
+echo "Default path "$defaultPath
+
+echo "Now the path"
+echo $project | jq -c ."packageDirectories" | jq ".[0]" | jq ."path"
