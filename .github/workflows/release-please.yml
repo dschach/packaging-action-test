@@ -17,8 +17,6 @@ jobs:
         with:
           command: manifest
           release-type: sfdx
-      - name: 'Display release-please outputs'
-        run: echo "${{join(steps.release-please.outputs.*, '\n')}}"
       - name: 'Check if release created'
         id: release-check
         if: steps.release-please.outputs.releases_created == false
