@@ -23,6 +23,10 @@ jobs:
         if: ${{ ! steps.release-please.outputs.releases_created }}
         run: |
           echo "No release created."
+          gh run cancel ${{ github.run_id }}
+          gh run watch ${{ github.run_id }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: 'Run on release creation'
         if: ${{ steps.release-please.outputs.releases_created }}
         run: echo "Release created"
