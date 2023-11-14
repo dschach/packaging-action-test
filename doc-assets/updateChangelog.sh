@@ -16,7 +16,7 @@ echo '</td></tr><tr><td class="footer"><div><a href="https://github.com/no-stack
 npm run prettier:docs
 rm first*
 
-git add doc-assets/changelog.html
-git add docs/changelog.html
+#git add doc-assets/changelog.html
+#git add docs/changelog.html
 
 #git commit -m "docs: update changelog"
