@@ -28,6 +28,9 @@ jobs:
         run: echo "Release created"
       - name: 'Checkout source code'
         uses: actions/checkout@v4
+      - name: 'Set up environment'
+        run: |
+          npm install --save-dev prettier
       - name: 'Update ApexDox'
         id: update-apex-dox
         #if: steps.release-please.outputs.releases_created == true
