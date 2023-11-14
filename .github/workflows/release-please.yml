@@ -19,15 +19,16 @@ jobs:
           release-type: sfdx
       - name: 'Display release-please outputs'
         run: echo "${{join(steps.release-please.outputs.*, '\n')}}"
-      - name: 'Check if package created'
-        id: package-check
+      - name: 'Check if release created'
+        id: release-check
         if: steps.release-please.outputs.releases_created == false
         run: |
-          echo "No package created. Exiting."
-          exit 0
-      - name: 'Run on package creation'
+          echo "No release created."
+      - name: 'Run on release creation'
         if: steps.release-please.outputs.releases_created == true
-        run: echo "package created"
+        run: echo "Release created"
+      - name: 'Checkout source code'
+        uses: actions/checkout@v4
       - name: 'Update ApexDox'
         id: update-apex-dox
         if: steps.release-please.outputs.releases_created == true
@@ -35,3 +36,8 @@ jobs:
           git config user.email "${{ github.repository_owner }}@users.noreply.github.com"
           git config user.name "${{ github.repository_owner }}"
           . doc-assets/updateChangelog.sh
+      - name: 'Commit changes'
+        id: auto-commit-action
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'docs: update changelog on release'

@@ -19,4 +19,4 @@ rm first*
 git add doc-assets/changelog.html
 git add docs/changelog.html
 
-git commit -m "docs: update changelog"
+#git commit -m "docs: update changelog"

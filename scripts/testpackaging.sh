@@ -2,19 +2,23 @@
 
 echo "start"
 
-project=`cat sfdx-project2.json` | jq .
-echo "project: $project"
-echo "now show namespace"
-namespace=$(echo $project | jq -r ."namespace")
-#namespace=$($project | jq ".namespace")
-echo "$namespace"
+defaultpath=$(jq -r '.packageDirectories.[] | select(.default==true) | .path' sfdx-project.json)
+echo $defaultpath
+mynamespace=$(jq -r '.namespace' sfdx-project.json)
+echo $mynamespace
+defaultPackage=$(jq -r '.packageDirectories.[] | select(.default==true)' sfdx-project.json)
+echo $defaultPackage
+mypath=$(echo $defaultPackage | jq -r '.path')
+echo $mypath
+echo "parse version"
+version=$(jq '.packageDirectories.[] | select(.default==true) | .versionNumber' sfdx-project2.json)
+echo "version "$version
 
-packagedirs=$(echo $project | jq ."packageDirectories")
-echo $packagedirs
-#echo $packagedirs | jq ".[0]"
+versionArray=$(jq '.packageDirectories.[] | select(.default==true) .versionNumber | split(".")' sfdx-project2.json)
+echo $versionArray
 
-defaultPath=$(echo $project | jq $packagedirs select(.default == true) | jq ."path")
-echo "Default path "$defaultPath
-
-echo "Now the path"
-echo $project | jq -c ."packageDirectories" | jq ".[0]" | jq ."path"
+major=1
+minor=2
+patch=3
+versionNumber=$(echo $major'.'$minor'.'$patch'.0')
+echo $versionNumber

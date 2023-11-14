@@ -28,7 +28,7 @@ Things to do in the packaging workflow:
 
    1. Find the path (?)
    2. Use that to get the sfdx packageDirectories entry (use default if only one path)
-   3. Match the package value wiht the PackageAliases to get the package number or just use the package name
+   3. Match the package value with the PackageAliases to get the package number or just use the package name
 
 4. Pull sfdx-project.json into multiple outputs
 
@@ -36,9 +36,16 @@ Things to do in the packaging workflow:
    2. minor
    3. patch
    4. namespace (take from file? maybe in marketplace action)
+   5. packageName
+      1. Use to find PackageId in "packageAliases" section
 
 5. Don't take version name from anything - in sfdx-project is fine
 6. If this is an action, allow an input for "promote" (true/false)
+7. Query existing package?
+   1. TODO: Find what info we may need from package
+8. Find existing version number (max)
+   1. Move existing version number to ancestor IF there is a managed package
+   2. Leave it alone if "HIGHEST" or is an ID
 
 All variables involved:
 
@@ -50,5 +57,64 @@ All variables involved:
 
 Inputs (when productized)
 
-- target-org?
-- installation-key?
+- wait (default 10, allow override)
+- verbose (default true)
+- target-org
+- dev hub auth-url (is this secure?)
+- package-name (find the packageDirectories node and use those values)
+  - optional and use default if not supplied?
+- optional inputs
+  - ancestorId / ancestorVersion / HIGHEST
+  - version name (as override)
+  - target-dev-hub
+  - api-version
+  - branch
+  - code-coverage
+  - definition-file
+  - installation-key
+  - installation-key-bypass (true if no value for installation-key)
+  - path (as override) <- this one is interesting
+  - post-install-script
+  - post-install-url
+  - release-notes-url
+  - skip-ancestor-check
+  - skip-validation
+  - tag
+  - uninstall-script
+  - version-description
+  - version-name
+  - version-number
+  - language
+
+```
+packageDirectories contents:
+ancestorId
+ancestorVersion
+default
+definitionFile
+namespace
+package
+packageAliases
+path
+seedMetadata
+versionDescription
+versionName
+versionNumber
+```
+
+```
+Package Version Create Request
+=== Package Version Create Request
+NAME                            VALUE
+─────────────────────────────   ────────────────────
+Version Create Request Id       08cB00000004CBxIAM
+Status                          InProgress
+Package Id                      0HoB00000004C9hKAE
+Package Version Id              05iB0000000CaaNIAS
+Subscriber Package Version Id   04tB0000000NOimIAG
+Tag                             git commit id 08dcfsdf
+Branch
+CreatedDate                     2018-05-08 09:48
+Installation URL
+https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000NOimIAG
+```

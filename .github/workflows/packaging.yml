@@ -62,7 +62,7 @@ jobs:
         id: create-package-version
         run: |
           set +e
-          json=$(sf package version create --code-coverage --package PackagingScratch --path force-app --installation-key-bypass --wait 20 --json)
+          json=$(sf package version create --code-coverage --package PackagingScratch --installation-key-bypass --wait 20 --json)
           echo $json
           status=$(echo $json | jq '.status')
           if [ $status == "0" ]; then
@@ -87,5 +87,6 @@ jobs:
       - name: 'Commit changes'
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: 'Created new package version'
+          commit_message: 'chore(packaging): created new package version'
           file_pattern: sfdx-project.json README.md
+          push_options: --force
