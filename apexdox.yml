@@ -8,7 +8,7 @@ engine:
   # excludes:
   #   - '*Test.cls'
   title: Project code documentation
-  subtitle: Documentation for <a target="_blank" rel="noopener noreferrer" href="https://github.com/dschach/projectname">projectname</a>
+  subtitle: Documentation for <a target="_blank" rel="noopener noreferrer" href="https://github.com/dschach/packaging-actions-test">packaging-actions-test</a>
   sortOrder: alpha
   cleanDir: false
   showTOCSnippets: true

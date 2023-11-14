@@ -7,7 +7,7 @@ printf '<link href="assets/styling.css" rel="stylesheet" />' > "doc-assets/chang
 echo >> "doc-assets/changelog.html"
 npx marked -i CHANGELOG.md --breaks >> "doc-assets/changelog.html"
 
-csplit -f "first" docs/changelog.html '/<td class="doc-page">/'
+csplit -f "first" docs/index.html '/<td class="doc-page">/'
 
 cp first00 "docs/changelog.html"
 echo '<td class="doc-page">' >> docs/changelog.html

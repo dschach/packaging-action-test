@@ -21,7 +21,7 @@
         <img src="assets/logo.png" />
         <div class="subtitle">
           Documentation for
-          <a target="_blank" rel="noopener noreferrer" href="https://github.com/dschach/projectname">projectname</a>
+          <a target="_blank" rel="noopener noreferrer" href="https://github.com/dschach/packaging-actions-test">packaging-actions-test</a>
         </div>
       </div>
       <div id="search-wrapper">
@@ -31,7 +31,7 @@
       <ul id="search-results" class=""></ul>
       <div class="navbar">
         <nav role="navigation">
-          <a class="nav-header" id="home" href="javascript:void(0)" onclick="goToLocation('index.html');">Home</a>
+          <a class="nav-header" id="home" href="javascript:void(0)" onclick="goToLocation('index.html');"> Home </a>
           <details id="Miscellaneous" class="group-name">
             <summary id="header-Miscellaneous" class="nav-header">
               <span>Miscellaneous</span>
@@ -49,24 +49,30 @@
     <table id="content">
       <tr>
         <td class="scoping-panel">
-          Show:
-          <input type="checkbox" checked="true" id="cbx-all" onclick="toggleAllScopes(this.checked);" />
-          <label for="cbx-all">All</label>
-          &nbsp;&nbsp;
+          Show: <input type="checkbox" checked="true" id="cbx-all" onclick="toggleAllScopes(this.checked);" />
+          <label for="cbx-all">All</label>&nbsp;&nbsp;
           <input type="checkbox" checked="true" id="cbx-global" onclick="toggleScope('global', this.checked);" />
-          <label for="cbx-global">global</label>
-          &nbsp;&nbsp;
-          <input type="checkbox" checked="true" id="cbx-public" onclick="toggleScope('public', this.checked);" />
-          <label for="cbx-public">public</label>
-          &nbsp;&nbsp;
-          <input type="checkbox" checked="true" id="cbx-protected" onclick="toggleScope('protected', this.checked);" />
-          <label for="cbx-protected">protected</label>
-          &nbsp;&nbsp;
-          <input type="checkbox" checked="true" id="cbx-private" onclick="toggleScope('private', this.checked);" />
-          <label for="cbx-private">private</label>
-          &nbsp;&nbsp;
-          <input type="checkbox" checked="true" id="cbx-testmethod" onclick="toggleScope('testmethod', this.checked);" />
-          <label for="cbx-testmethod">testMethod</label>
+          <label for="cbx-global"> global </label>&nbsp;&nbsp;<input
+            type="checkbox"
+            checked="true"
+            id="cbx-public"
+            onclick="toggleScope('public', this.checked);" />
+          <label for="cbx-public"> public </label>&nbsp;&nbsp;<input
+            type="checkbox"
+            checked="true"
+            id="cbx-protected"
+            onclick="toggleScope('protected', this.checked);" />
+          <label for="cbx-protected"> protected </label>&nbsp;&nbsp;<input
+            type="checkbox"
+            checked="true"
+            id="cbx-private"
+            onclick="toggleScope('private', this.checked);" />
+          <label for="cbx-private"> private </label>&nbsp;&nbsp;<input
+            type="checkbox"
+            checked="true"
+            id="cbx-testmethod"
+            onclick="toggleScope('testmethod', this.checked);" />
+          <label for="cbx-testmethod"> testMethod </label>
         </td>
       </tr>
       <tr>
