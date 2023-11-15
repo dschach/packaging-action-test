@@ -14,13 +14,6 @@
 	"release-type": "sfdx",
 	"$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
 	"pull-request-footer": "This PR was generated with [Release Please](https://github.com/googleapis/release-please).",
-	"extra-files": [
-		{
-			"type": "json",
-			"path": "package.json",
-			"jsonpath": "$.version"
-		}
-	],
 	"changelog-sections": [
 		{ "type": "feat", "section": "Features", "hidden": false },
 		{ "type": "fix", "section": "Bug Fixes", "hidden": false },

@@ -2,7 +2,7 @@
 	"name": "base-sfdx",
 	"private": true,
 	"version": "0.3.4",
-	"description": "DSchach Base SFDX Project",
+	"description": "DSchach packaging actions test project",
 	"scripts": {
 		"apex:test": "rm testresults/* && sf apex run test --test-level RunLocalTests --output-dir testresults --result-format human --code-coverage",
 		"audittrail": "sf data query --query \"SELECT Id,Action,Section,CreatedDate,CreatedBy.Name,Display FROM SetupAuditTrail ORDER BY CreatedDate DESC\" --resultformat csv > logs/SetupAuditTrail.csv",
