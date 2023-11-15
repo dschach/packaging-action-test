@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.3.4](https://github.com/dschach/packaging-action-test/compare/v0.3.3...v0.3.4) (2023-11-15)
+
+
+### Bug Fixes
+
+* Enable r-p action ([9469206](https://github.com/dschach/packaging-action-test/commit/9469206e0ba65c420143d97ecd1dfdeb92dd2021))
+
+
+### Documentation
+
+* Update changelog on release ([bb90af3](https://github.com/dschach/packaging-action-test/commit/bb90af320c722bafa2b6b9c95b78cc2848fbf350))
+
+
+### Continuous Integration
+
+* **rp:** Rename release-type & update release conditional ([dad1761](https://github.com/dschach/packaging-action-test/commit/dad176129d781a570506caf8072db358c127abd9))
+
 ## [0.3.3](https://github.com/dschach/packaging-action-test/compare/v0.3.2...v0.3.3) (2023-11-14)
 
 

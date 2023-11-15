@@ -3,7 +3,7 @@
     {
       "path": "force-app",
       "default": true,
-      "versionNumber": "0.3.3.NEXT"
+      "versionNumber": "0.3.4.NEXT"
     }
   ],
   "name": "dschach-package-test",
