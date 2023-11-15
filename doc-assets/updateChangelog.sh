@@ -12,7 +12,7 @@ csplit -f "first" docs/index.html '/<td class="doc-page">/'
 cp first00 "docs/changelog.html"
 echo '<td class="doc-page">' >> docs/changelog.html
 cat "doc-assets/changelog.html" >> docs/changelog.html
-echo '</td></tr><tr><td class="footer"><div><a href="https://github.com/no-stack-dub-sack/apexdox-vs-code" target="_blank" rel="noopener noreferrer">Powered By ApexDox VS Code</a></div></td></tr></table></body></html>' >> docs/changelog.html
+echo '</td></tr><tr><td class="footer"><div><a href="https://github.com/no-stack-dub-sack/apexdox-vs-code" target="_blank" rel="noopener noreferrer"> Powered By ApexDox VS Code </a></div></td></tr></table></body></html>' >> docs/changelog.html
 npm run prettier:docs
 rm first*
 

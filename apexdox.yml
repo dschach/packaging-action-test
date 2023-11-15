@@ -20,8 +20,8 @@ engine:
     #- webService
     - testMethod
   homePagePath: '${workspaceFolder}/doc-assets/main.html'
-  #pages:
-  #- '${workspaceFolder}/doc-assets/Installation.html'
+  pages:
+    - '${workspaceFolder}/doc-assets/changelog.html'
   assets:
     - '${workspaceFolder}/doc-assets/logo.png'
     - '${workspaceFolder}/doc-assets/favicon.png'
@@ -31,7 +31,7 @@ engine:
     - '${workspaceFolder}/doc-assets/styling.css'
     - '${workspaceFolder}/doc-assets/highlight.js'
     - '${workspaceFolder}/doc-assets/index.js'
-    - '${workspaceFolder}/doc-assets/changelog.html'
+    #- '${workspaceFolder}/doc-assets/changelog.html'
   port: 8088
 docblock:
   alignItems: true
