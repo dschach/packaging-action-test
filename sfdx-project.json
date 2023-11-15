@@ -1,13 +1,17 @@
 {
-  "packageDirectories": [
-    {
-      "path": "force-app",
-      "default": true,
-      "versionNumber": "0.3.4.NEXT"
-    }
-  ],
-  "name": "dschach-package-test",
-  "namespace": "testspace",
-  "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "59.0"
+	"packageDirectories": [
+		{
+			"path": "baseSFDX",
+			"default": true,
+			"versionNumber": "0.3.4.NEXT"
+		},
+		{
+			"path": "duplicatehandling",
+			"default": false
+		}
+	],
+	"name": "dschach-package-test",
+	"namespace": "testspace",
+	"sfdcLoginUrl": "https://login.salesforce.com",
+	"sourceApiVersion": "59.0"
 }
