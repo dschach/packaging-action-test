@@ -38,16 +38,13 @@ jobs:
       - name: 'Checkout source code'
         uses: actions/checkout@v4
         if: ${{ steps.release-please.outputs.releases_created }}
-      - name: 'Set up environment'
-        if: ${{ steps.release-please.outputs.releases_created }}
-        run: |
-          npm install --save-dev prettier
       - name: 'Update ApexDox'
         id: update-apex-dox
         #if: ${{ steps.release-please.outputs.releases_created }}
         run: |
           git config user.email "${{ github.repository_owner }}@users.noreply.github.com"
           git config user.name "${{ github.repository_owner }}"
+          npm install --save-dev prettier
           . doc-assets/updateChangelog.sh
           rm docs/changelog.html
       - name: 'Commit changes'
