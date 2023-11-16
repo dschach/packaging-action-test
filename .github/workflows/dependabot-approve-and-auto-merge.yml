@@ -10,11 +10,11 @@ jobs:
     steps:
       # Checkout the source code
       - name: 'Checkout source code'
-        uses: actions/checkout@v4
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
 
       - name: 'Fetch Dependabot metadata'
         id: dependabot-fetch
-        uses: dependabot/fetch-metadata@v1
+        uses: dependabot/fetch-metadata@c9c4182bf1b97f5224aee3906fd373f6b61b4526 # v1
         with:
           github-token: '${{ secrets.GITHUB_TOKEN }}'
 
@@ -51,7 +51,7 @@ jobs:
     steps:
       - name: 'Fetch Dependabot metadata'
         id: dependabot
-        uses: dependabot/fetch-metadata@v1
+        uses: dependabot/fetch-metadata@c9c4182bf1b97f5224aee3906fd373f6b61b4526 # v1
         with:
           github-token: '${{ secrets.GITHUB_TOKEN }}'
 
