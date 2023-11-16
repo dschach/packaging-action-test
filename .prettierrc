@@ -25,6 +25,15 @@
 			"options": { "tabWidth": 2, "useTabs": false }
 		},
 		{
+			"files": "*.json5",
+			"options": {
+				"printWidth": 80,
+				"parser": "json5",
+				"quoteProps": "preserve",
+				"singleQuote": false
+			}
+		},
+		{
 			"files": "docs/*.html",
 			"options": {
 				"parser": "html",
