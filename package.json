@@ -52,7 +52,7 @@
 		"prettier": "3.1.0",
 		"prettier-plugin-apex": "2.0.1",
 		"release-please": "16.3.0",
-		"renovate": "37.60.2"
+		"renovate": "37.60.4"
 	},
 	"lint-staged": {
 		"force-app/**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,yaml,yml}": [
