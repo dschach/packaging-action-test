@@ -37,7 +37,7 @@
 		"@salesforce/eslint-config-lwc": "3.5.3",
 		"@salesforce/eslint-plugin-aura": "2.1.0",
 		"@salesforce/eslint-plugin-lightning": "1.0.0",
-		"@salesforce/sfdx-lwc-jest": "3.1.2",
+		"@salesforce/sfdx-lwc-jest": "4.0.1",
 		"eslint": "8.56.0",
 		"eslint-config-prettier": "9.1.0",
 		"eslint-plugin-import": "2.29.1",
