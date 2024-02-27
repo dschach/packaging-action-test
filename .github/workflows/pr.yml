@@ -48,7 +48,7 @@ jobs:
 
       # Upload code coverage data
       - name: 'Upload code coverage for LWC to Codecov.io'
-        uses: codecov/codecov-action@e0b68c6749509c5f83f984dd99a76a1c1a231044 # v4
+        uses: codecov/codecov-action@54bcd8715eee62d40e33596ef5e8f0f48dbbccab # v4
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           flags: LWC
@@ -142,7 +142,7 @@ jobs:
 
       # Upload code coverage to Codecov.io
       - name: 'Upload code coverage for Apex to Codecov.io'
-        uses: codecov/codecov-action@e0b68c6749509c5f83f984dd99a76a1c1a231044 # v4
+        uses: codecov/codecov-action@54bcd8715eee62d40e33596ef5e8f0f48dbbccab # v4
         with:
           flags: Apex
           token: ${{ secrets.CODECOV_TOKEN }}
