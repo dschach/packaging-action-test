@@ -8,6 +8,10 @@
 		{
 			"matchDepTypes": ["action"],
 			"pinDigests": false
+		},
+		{
+			"matchManagers": ["github-actions"],
+			"pinDigests": false
 		}
 	],
 	"lockFileMaintenance": {
