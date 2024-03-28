@@ -23,7 +23,7 @@ jobs:
 
       # Checkout the code in the pull request
       - name: 'Checkout source code'
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+        uses: actions/checkout@v4
         with:
           ref: 'main'
 
@@ -85,7 +85,7 @@ jobs:
 
       # Update sfdx-project.json
       - name: 'Commit changes'
-        uses: stefanzweifel/git-auto-commit-action@8756aa072ef5b4a080af5dc8fef36c5d586e521d # v5
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: 'chore(packaging): created new package version'
           file_pattern: sfdx-project.json README.md
