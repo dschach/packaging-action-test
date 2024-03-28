@@ -1,129 +1,167 @@
 <link href="assets/styling.css" rel="stylesheet" />
-<h1>Duplicate Management Enhancements <!-- omit in toc --></h1>
-<p><img src="https://img.shields.io/github/license/dschach/duplicatehandling" alt="License">
-<a href="https://github.com/dschach/duplicatehandling/actions/workflows/ci.yml"><img src="https://github.com/dschach/duplicatehandling/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
-<a href="https://github.com/dschach/duplicatehandling/actions/workflows/codecov.yml"><img src="https://github.com/dschach/duplicatehandling/actions/workflows/codecov.yml/badge.svg" alt="coverage check"></a>
-<a href="https://codecov.io/gh/dschach/duplicatehandling"><img src="https://codecov.io/gh/dschach/duplicatehandling/branch/main/graph/badge.svg?token=4353PVRMRH" alt="codecov"></a>
-<a href="https://twitter.com/dschach"><img src="https://img.shields.io/twitter/follow/dschach.svg?style=social" alt="Twitter"></a></p>
+<h1>
+	Duplicate Management Enhancements
+	<!-- omit in toc -->
+</h1>
+<p>
+	<img src="https://img.shields.io/github/license/dschach/duplicatehandling" alt="License" />
+	<a href="https://github.com/dschach/duplicatehandling/actions/workflows/ci.yml"
+		><img src="https://github.com/dschach/duplicatehandling/actions/workflows/ci.yml/badge.svg" alt="CI"
+	/></a>
+	<a href="https://github.com/dschach/duplicatehandling/actions/workflows/codecov.yml"
+		><img src="https://github.com/dschach/duplicatehandling/actions/workflows/codecov.yml/badge.svg" alt="coverage check"
+	/></a>
+	<a href="https://codecov.io/gh/dschach/duplicatehandling"
+		><img src="https://codecov.io/gh/dschach/duplicatehandling/branch/main/graph/badge.svg?token=4353PVRMRH" alt="codecov"
+	/></a>
+	<a href="https://twitter.com/dschach"><img src="https://img.shields.io/twitter/follow/dschach.svg?style=social" alt="Twitter" /></a>
+</p>
 <blockquote>
-<p>This application is designed to run on the Salesforce Platform.</p>
+	<p>This application is designed to run on the Salesforce Platform.</p>
 </blockquote>
 <h2><a href="./changelog.html">Changelog</a></h2>
-<h2>Table of contents <!-- omit in toc --></h2>
+<h2>
+	Table of contents
+	<!-- omit in toc -->
+</h2>
 <ul>
-<li><a href="#changelog">Changelog</a></li>
-<li><a href="#package-installation">Package Installation</a><ul>
-<li><a href="#quick-deploy">Quick Deploy</a></li>
-<li><a href="#installing-the-app-using-a-scratch-org">Installing the app using a Scratch Org</a></li>
-<li><a href="#installing-the-app-using-a-scratch-org-step-by-step">Installing the app using a Scratch Org (Step-by-step)</a></li>
-<li><a href="#installing-the-app-using-a-developer-edition-org-or-a-trailhead-playground">Installing the App using a Developer Edition Org or a Trailhead Playground</a></li>
-</ul>
-</li>
+	<li><a href="#changelog">Changelog</a></li>
+	<li>
+		<a href="#package-installation">Package Installation</a>
+		<ul>
+			<li><a href="#quick-deploy">Quick Deploy</a></li>
+			<li><a href="#installing-the-app-using-a-scratch-org">Installing the app using a Scratch Org</a></li>
+			<li><a href="#installing-the-app-using-a-scratch-org-step-by-step">Installing the app using a Scratch Org (Step-by-step)</a></li>
+			<li><a href="#installing-the-app-using-a-developer-edition-org-or-a-trailhead-playground">Installing the App using a Developer Edition Org or a Trailhead Playground</a></li>
+		</ul>
+	</li>
 </ul>
 <h2>Package Installation</h2>
 <a href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04t3a000000LdirAAC">
-  <img alt="Deploy to Salesforce"
-       src="./assets/deploy-package-to-prod.png">
+	<img alt="Deploy to Salesforce" src="./assets/deploy-package-to-prod.png" />
 </a>
 <a href="https://test.salesforce.com/packaging/installPackage.apexp?p0=04t3a000000LdirAAC">
-  <img alt="Deploy to Salesforce Sandbox"
-       src="./assets/deploy-package-to-sandbox.png">
+	<img alt="Deploy to Salesforce Sandbox" src="./assets/deploy-package-to-sandbox.png" />
 </a>
 
-<br/>
+<br />
 
 <h3>Quick Deploy</h3>
 <a href="https://githubsfdeploy.herokuapp.com">
-  <img alt="Deploy to Salesforce"
-       src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png">
+	<img alt="Deploy to Salesforce" src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png" />
 </a>
 
 <h3>Installing the app using a Scratch Org</h3>
 <ol>
-<li><p>Set up your environment. Follow the steps in the <a href="https://trailhead.salesforce.com/content/learn/projects/quick-start-lightning-web-components/">Quick Start: Lightning Web Components</a> Trailhead project. The steps include:</p>
-<ul>
-<li>Enable Dev Hub in your Trailhead Playground</li>
-<li>Install Salesforce CLI</li>
-<li>Install Visual Studio Code</li>
-<li>Install the Visual Studio Code Salesforce extensions, including the Lightning Web Components extension</li>
-</ul>
-</li>
-<li><p>If you haven&#39;t already done so, authorize your hub org and provide it with an alias (<strong>myhuborg</strong> in the command below):</p>
-<pre><code class="language-bash">sf org login web --set-default-dev-hub --alias myhuborg
+	<li>
+		<p>
+			Set up your environment. Follow the steps in the
+			<a href="https://trailhead.salesforce.com/content/learn/projects/quick-start-lightning-web-components/">Quick Start: Lightning Web Components</a> Trailhead project. The steps
+			include:
+		</p>
+		<ul>
+			<li>Enable Dev Hub in your Trailhead Playground</li>
+			<li>Install Salesforce CLI</li>
+			<li>Install Visual Studio Code</li>
+			<li>Install the Visual Studio Code Salesforce extensions, including the Lightning Web Components extension</li>
+		</ul>
+	</li>
+	<li>
+		<p>If you haven&#39;t already done so, authorize your hub org and provide it with an alias (<strong>myhuborg</strong> in the command below):</p>
+		<pre><code class="language-bash">sf org login web --set-default-dev-hub --alias myhuborg
 </code></pre>
-</li>
-<li><p>Clone the duplicatehandling repository:</p>
-<pre><code class="language-bash">git clone https://github.com/dschach/duplicatehandling
+	</li>
+	<li>
+		<p>Clone the duplicatehandling repository:</p>
+		<pre><code class="language-bash">git clone https://github.com/dschach/duplicatehandling
 cd duplicatehandling
 </code></pre>
-</li>
-<li><p>Run the npm script to create a scratch org, assign the permission set, and open the org</p>
-<pre><code class="language-bash">npm run scratchorg
+	</li>
+	<li>
+		<p>Run the npm script to create a scratch org, assign the permission set, and open the org</p>
+		<pre><code class="language-bash">npm run scratchorg
 </code></pre>
-</li>
+	</li>
 </ol>
 <p>That&#39;s it!</p>
 <h3>Installing the app using a Scratch Org (Step-by-step)</h3>
 <ol>
-<li><p>Set up your environment. Follow the steps in the <a href="https://trailhead.salesforce.com/content/learn/projects/quick-start-lightning-web-components/">Quick Start: Lightning Web Components</a> Trailhead project. The steps include:</p>
-<ul>
-<li>Enable Dev Hub in your Trailhead Playground</li>
-<li>Install Salesforce CLI</li>
-<li>Install Visual Studio Code</li>
-<li>Install the Visual Studio Code Salesforce extensions, including the Lightning Web Components extension</li>
-</ul>
-</li>
-<li><p>If you haven&#39;t already done so, authorize your hub org and provide it with an alias (<strong>myhuborg</strong> in the command below):</p>
-<pre><code class="language-bash">sf org login web --set-default-dev-hub --alias myhuborg
+	<li>
+		<p>
+			Set up your environment. Follow the steps in the
+			<a href="https://trailhead.salesforce.com/content/learn/projects/quick-start-lightning-web-components/">Quick Start: Lightning Web Components</a> Trailhead project. The steps
+			include:
+		</p>
+		<ul>
+			<li>Enable Dev Hub in your Trailhead Playground</li>
+			<li>Install Salesforce CLI</li>
+			<li>Install Visual Studio Code</li>
+			<li>Install the Visual Studio Code Salesforce extensions, including the Lightning Web Components extension</li>
+		</ul>
+	</li>
+	<li>
+		<p>If you haven&#39;t already done so, authorize your hub org and provide it with an alias (<strong>myhuborg</strong> in the command below):</p>
+		<pre><code class="language-bash">sf org login web --set-default-dev-hub --alias myhuborg
 </code></pre>
-</li>
-<li><p>Clone the duplicatehandling repository:</p>
-<pre><code class="language-bash">git clone https://github.com/dschach/duplicatehandling
+	</li>
+	<li>
+		<p>Clone the duplicatehandling repository:</p>
+		<pre><code class="language-bash">git clone https://github.com/dschach/duplicatehandling
 cd duplicatehandling
 </code></pre>
-</li>
-<li><p>Create a scratch org and provide it with an alias (<strong>duplicatehandling</strong> in the command below):</p>
-<pre><code class="language-bash">sf org create scratch --definition-file config/project-scratch-def.json --durationdays 10 --alias duplicatehandling --set-default
+	</li>
+	<li>
+		<p>Create a scratch org and provide it with an alias (<strong>duplicatehandling</strong> in the command below):</p>
+		<pre><code class="language-bash">sf org create scratch --definition-file config/project-scratch-def.json --durationdays 10 --alias duplicatehandling --set-default
 </code></pre>
-</li>
-<li><p>Push the app to your scratch org:</p>
-<pre><code class="language-bash">sf project deploy start
+	</li>
+	<li>
+		<p>Push the app to your scratch org:</p>
+		<pre><code class="language-bash">sf project deploy start
 </code></pre>
-</li>
-<li><p>Assign the <strong>Duplicates Handler</strong> permission set to the default user:</p>
-<pre><code class="language-bash">sf org assign permset --name Duplicates_Handler
+	</li>
+	<li>
+		<p>Assign the <strong>Duplicates Handler</strong> permission set to the default user:</p>
+		<pre><code class="language-bash">sf org assign permset --name Duplicates_Handler
 </code></pre>
-</li>
-<li><p>Open the scratch org:</p>
-<pre><code class="language-bash">sf org open
+	</li>
+	<li>
+		<p>Open the scratch org:</p>
+		<pre><code class="language-bash">sf org open
 </code></pre>
-</li>
+	</li>
 </ol>
 <h3>Installing the App using a Developer Edition Org or a Trailhead Playground</h3>
-<p>Follow this set of instructions if you want to deploy the app to a more permanent environment than a Scratch org.
-This includes non source-tracked orgs such as a <a href="https://developer.salesforce.com/signup">free Developer Edition Org</a> or a <a href="https://trailhead.salesforce.com/">Trailhead Playground</a>.</p>
+<p>
+	Follow this set of instructions if you want to deploy the app to a more permanent environment than a Scratch org. This includes non source-tracked orgs such as a
+	<a href="https://developer.salesforce.com/signup">free Developer Edition Org</a> or a <a href="https://trailhead.salesforce.com/">Trailhead Playground</a>.
+</p>
 <p>Make sure to start from a brand-new environment to avoid conflicts with previous work you may have done.</p>
 <ol>
-<li><p>Clone this repository:</p>
-<pre><code class="language-bash">git clone https://github.com/dschach/duplicatehandling
+	<li>
+		<p>Clone this repository:</p>
+		<pre><code class="language-bash">git clone https://github.com/dschach/duplicatehandling
 cd duplicatehandling
 </code></pre>
-</li>
-<li><p>Authorize your Trailhead Playground or Developer org and provide it with an alias (<strong>mydevorg</strong> in the command below):</p>
-<pre><code class="language-bash">sf org login web --set-default-dev-hub --alias mydevorg
+	</li>
+	<li>
+		<p>Authorize your Trailhead Playground or Developer org and provide it with an alias (<strong>mydevorg</strong> in the command below):</p>
+		<pre><code class="language-bash">sf org login web --set-default-dev-hub --alias mydevorg
 </code></pre>
-</li>
-<li><p>Run this command in a terminal to deploy the app.</p>
-<pre><code class="language-bash">sf project deploy start --source-dir force-app
+	</li>
+	<li>
+		<p>Run this command in a terminal to deploy the app.</p>
+		<pre><code class="language-bash">sf project deploy start --source-dir force-app
 </code></pre>
-</li>
-<li><p>Assign the <code>Duplicates_Handler</code> permission set to the default user.</p>
-<pre><code class="language-bash">sf org assign permset --name Duplicates_Handler
+	</li>
+	<li>
+		<p>Assign the <code>Duplicates_Handler</code> permission set to the default user.</p>
+		<pre><code class="language-bash">sf org assign permset --name Duplicates_Handler
 </code></pre>
-</li>
-<li><p>If your org isn&#39;t already open, open it now:</p>
-<pre><code class="language-bash">sf org open --target-org mydevorg
+	</li>
+	<li>
+		<p>If your org isn&#39;t already open, open it now:</p>
+		<pre><code class="language-bash">sf org open --target-org mydevorg
 </code></pre>
-</li>
+	</li>
 </ol>
-

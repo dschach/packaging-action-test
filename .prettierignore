@@ -6,15 +6,16 @@
 !**/staticresources/*.js
 .localdevserver
 .sfdx
+.sf
 .vscode
 
 scripts/soql/**
 node_modules/
 
 coverage/
-doc-assets/*.js
-docs/assets/*.js
-!docs/*
+**/doc*/*.js
+**/doc*/**/*.js
+**/!docs/*
 *-meta.xml
 data/
 pmd/
@@ -22,3 +23,6 @@ pmd/
 # Exclude project config
 sfdx-project.json
 dependencies.json
+
+CHANGELOG.md
+.prettierignore

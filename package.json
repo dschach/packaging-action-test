@@ -52,17 +52,11 @@
 		"prettier-plugin-apex": "2.1.0"
 	},
 	"lint-staged": {
-		"force-app/**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,yaml,yml}": [
-			"prettier --write"
-		],
-		"force-app/**/{aura,lwc}/**": [
+		"**/{aura,lwc}/**": [
 			"eslint"
 		],
-		"docs/assets/*.css": [
+		"**/*": [
 			"prettier --write"
-		],
-		"docs/*.html": [
-			"prettier --write --tab-width 2"
 		]
 	}
 }
