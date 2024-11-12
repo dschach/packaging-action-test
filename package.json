@@ -49,7 +49,7 @@
 		"marked": "12.0.2",
 		"node-jq": "6.0.1",
 		"prettier": "3.3.3",
-		"prettier-plugin-apex": "2.2.1"
+		"prettier-plugin-apex": "2.2.2"
 	},
 	"lint-staged": {
 		"force-app/**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,yaml,yml}": [
