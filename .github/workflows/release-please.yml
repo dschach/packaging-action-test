@@ -49,6 +49,6 @@ jobs:
       - name: 'Commit changes'
         id: auto-commit-action
         if: ${{ steps.release-please.outputs.releases_created }}
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: 'docs: update ApexDox for release ${{ steps.release-please.outputs.major }}.${{ steps.release-please.outputs.minor }}.${{ steps.release-please.outputs.patch }}'
