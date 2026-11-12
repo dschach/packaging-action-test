@@ -98,7 +98,7 @@ jobs:
       - name: 'Commit changes'
         id: auto-commit-action
         if: steps.count-changes.outputs.changes > 0
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: 'Created new package version'
           #file_pattern: sfdx-project.json
