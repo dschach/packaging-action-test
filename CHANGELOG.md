@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.3.6](https://github.com/dschach/packaging-action-test/compare/v0.3.5...v0.3.6) (2026-10-23)
+
+
+### Styles
+
+* Run Prettier on repo ([5ba3a5b](https://github.com/dschach/packaging-action-test/commit/5ba3a5bcc9ae01193676c882f614d9eb7c436143))
+
+
+### Documentation
+
+* Update ApexDox for release .. ([6a0759d](https://github.com/dschach/packaging-action-test/commit/6a0759d18f2129cefe92414a9d7c3dc835ef370e))
+* Update ApexDox for release 0.3.5 ([6bd5646](https://github.com/dschach/packaging-action-test/commit/6bd56468fde060a0d583a527992f1f6717c5f77e))
+
+
+### Continuous Integration
+
+* **workflow security:** Document pull_request_target policy, rename Dependabot workflow ([#315](https://github.com/dschach/packaging-action-test/issues/315)) ([f6820ca](https://github.com/dschach/packaging-action-test/commit/f6820cad7a118693c4812f5ef58b4849e5525ef4))
+
 ## [0.3.5](https://github.com/dschach/packaging-action-test/compare/v0.3.4...v0.3.5) (2026-10-22)
 
 ### Miscellaneous Chores
