@@ -65,7 +65,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '11'
+          java-version: '21'
       # Run PMD scan
       - name: 'Perform PMD scan with PMD action'
         uses: pmd/pmd-github-action@v2
