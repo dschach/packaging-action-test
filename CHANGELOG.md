@@ -1,5 +1,49 @@
 # Changelog
 
+## [0.3.6](https://github.com/dschach/packaging-action-test/compare/v0.3.5...v0.3.6) (2026-11-24)
+
+
+### Miscellaneous Chores
+
+* **renovate:** Require dashboard approval for all updates ([#318](https://github.com/dschach/packaging-action-test/issues/318)) ([aacf0d4](https://github.com/dschach/packaging-action-test/commit/aacf0d430918217ff5b20a42e27025c4cdb9079b))
+
+
+### Styles
+
+* Run Prettier on repo ([5ba3a5b](https://github.com/dschach/packaging-action-test/commit/5ba3a5bcc9ae01193676c882f614d9eb7c436143))
+
+
+### Documentation
+
+* Update ApexDox for release .. ([8c5664b](https://github.com/dschach/packaging-action-test/commit/8c5664b211b8f034d706240043d8c4e85c759923))
+* Update ApexDox for release .. ([6a0759d](https://github.com/dschach/packaging-action-test/commit/6a0759d18f2129cefe92414a9d7c3dc835ef370e))
+* Update ApexDox for release 0.3.5 ([6bd5646](https://github.com/dschach/packaging-action-test/commit/6bd56468fde060a0d583a527992f1f6717c5f77e))
+
+
+### Build System
+
+* **@prettier/plugin-xml:** Update devDependency @prettier/plugin-xml from 3.4.1 to 3.4.2 ([#294](https://github.com/dschach/packaging-action-test/issues/294)) ([38235bc](https://github.com/dschach/packaging-action-test/commit/38235bc4b331827c9f9fe8086fb2e289aadf1440))
+* **fast-xml-parser:** Bump fast-xml-parser from 5.11.2 to 5.12.0 ([#316](https://github.com/dschach/packaging-action-test/issues/316)) ([04fa6af](https://github.com/dschach/packaging-action-test/commit/04fa6af03639c19cae3985985c2a444c5d893da1))
+* **follow-redirects:** Bump follow-redirects from 1.16.1 to 1.16.3 ([#317](https://github.com/dschach/packaging-action-test/issues/317)) ([92b3732](https://github.com/dschach/packaging-action-test/commit/92b37321f78c26ccabeff0637b0c07c5e2f62b50))
+* **lint-staged:** Update devDependency lint-staged from 15.4.3 to 17.6.2 ([#312](https://github.com/dschach/packaging-action-test/issues/312)) ([64d2f16](https://github.com/dschach/packaging-action-test/commit/64d2f16b75f4d2e38253e3f7f81623c40b9a13fc))
+* **marked:** Update devDependency marked from 12.0.2 to 18.2.1 ([#302](https://github.com/dschach/packaging-action-test/issues/302)) ([01d5ae5](https://github.com/dschach/packaging-action-test/commit/01d5ae55e333d9236b4696bbf3242f5b807353cd))
+* **picomatch:** Bump picomatch from 2.3.1 to 2.3.2 ([#291](https://github.com/dschach/packaging-action-test/issues/291)) ([2c7510c](https://github.com/dschach/packaging-action-test/commit/2c7510c19adda8724b044ac284a9c434600183a2))
+* **prettier-plugin-apex:** Update devDependency prettier-plugin-apex from 2.2.4 to 2.4.0 ([#250](https://github.com/dschach/packaging-action-test/issues/250)) ([95525ae](https://github.com/dschach/packaging-action-test/commit/95525aebd17f6eb595f8f8b3f4a2012418b0ba73))
+* **prettier:** Update devDependency prettier from 3.5.3 to 3.10.1 ([#300](https://github.com/dschach/packaging-action-test/issues/300)) ([105fe2c](https://github.com/dschach/packaging-action-test/commit/105fe2c18a2d926769caf4ca6ba79dbc544b0fac))
+
+
+### Continuous Integration
+
+* **actions/cache:** Update actions/cache action from v4 to v6 ([#303](https://github.com/dschach/packaging-action-test/issues/303)) ([61c962d](https://github.com/dschach/packaging-action-test/commit/61c962d70284cb520ba17e1f7f5b69a8fa0364a2))
+* **actions/checkout:** Update actions/checkout action from v4 to v7 ([#304](https://github.com/dschach/packaging-action-test/issues/304)) ([eb92e49](https://github.com/dschach/packaging-action-test/commit/eb92e49b7a15a658119657fd8d71d71b10cde1d3))
+* **actions/setup-java:** Update actions/setup-java action from v4 to v6 ([#305](https://github.com/dschach/packaging-action-test/issues/305)) ([126fc0f](https://github.com/dschach/packaging-action-test/commit/126fc0f076cb70714634c8e877047e68a04f5e7a))
+* **actions/setup-node:** Update actions/setup-node action from v4 to v7 ([#306](https://github.com/dschach/packaging-action-test/issues/306)) ([0bc1850](https://github.com/dschach/packaging-action-test/commit/0bc18507430d913c9445646fa18e0287268a7d6c))
+* **codecov/codecov-action:** Update codecov/codecov-action action from v5 to v7 ([#307](https://github.com/dschach/packaging-action-test/issues/307)) ([0685400](https://github.com/dschach/packaging-action-test/commit/0685400cd0ca5dadd65ccf9afbce9982eec2937e))
+* **googleapis/release-please-action:** Update googleapis/release-please-action action from v4 to v5 ([#308](https://github.com/dschach/packaging-action-test/issues/308)) ([2f9f26e](https://github.com/dschach/packaging-action-test/commit/2f9f26ec7acc0af3b6bf5ff3f5327d05612df640))
+* **java-jdk:** Update dependency java-jdk from v11 to v21 ([#309](https://github.com/dschach/packaging-action-test/issues/309)) ([de70366](https://github.com/dschach/packaging-action-test/commit/de70366771839c847e976432fbee3b25723d923e))
+* **stefanzweifel/git-auto-commit-action:** Update stefanzweifel/git-auto-commit-action action from v5 to v7 ([#310](https://github.com/dschach/packaging-action-test/issues/310)) ([da52ef2](https://github.com/dschach/packaging-action-test/commit/da52ef218e6bd5bf87bbd7ee328741fd89857def))
+* **workflow security:** Document pull_request_target policy, rename Dependabot workflow ([#315](https://github.com/dschach/packaging-action-test/issues/315)) ([f6820ca](https://github.com/dschach/packaging-action-test/commit/f6820cad7a118693c4812f5ef58b4849e5525ef4))
+
 ## [0.3.5](https://github.com/dschach/packaging-action-test/compare/v0.3.4...v0.3.5) (2026-10-22)
 
 ### Miscellaneous Chores

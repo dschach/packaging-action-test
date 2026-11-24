@@ -3,7 +3,7 @@
 		{
 			"path": "baseSFDX",
 			"default": true,
-			"versionNumber": "0.3.5.NEXT"
+			"versionNumber": "0.3.6.NEXT"
 		},
 		{
 			"path": "duplicatehandling",
